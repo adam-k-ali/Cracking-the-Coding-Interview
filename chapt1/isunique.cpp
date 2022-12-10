@@ -41,6 +41,7 @@ int main() {
     errors += isUnique(2, "ab") == true ? 0 : 1;
     errors += isUnique(4, "abca") == false ? 0 : 1;
     errors += isUnique(5, "adadd") == false ? 0 : 1;
+    
     cout << "Tests run: " << 5 << endl;
     cout << "Errors: " << errors << endl;
 
