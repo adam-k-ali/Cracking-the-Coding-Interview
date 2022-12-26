@@ -3,6 +3,7 @@
 //
 
 #include "LinkedList.h"
+#include <iostream>
 
 void LinkedList::copy_list(ListNode* other_head) {
     if (other_head == nullptr) {
@@ -44,6 +45,33 @@ void LinkedList::append(int i) {
         }
         curr->next = new ListNode(i);
     }
+}
+
+void LinkedList::append_node(ListNode* node) {
+    if (head == nullptr) {
+        head = node;
+    } else {
+        ListNode* curr = head;
+        while(curr->next != nullptr) {
+            curr = curr->next;
+        }
+        curr->next = node;
+    }
+}
+
+ListNode* LinkedList::intersect(const LinkedList &other) const {
+    ListNode* curr = head;
+    while (curr != nullptr) {
+        ListNode* other_curr = other.head;
+        while (other_curr != nullptr) {
+            if (curr == other_curr) {
+                return curr;
+            }
+            other_curr = other_curr->next;
+        }
+        curr = curr->next;
+    }
+    return nullptr;
 }
 
 void LinkedList::reverse() {

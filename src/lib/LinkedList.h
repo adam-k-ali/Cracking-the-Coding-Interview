@@ -35,6 +35,8 @@ public:
     static LinkedList from_vector(vector<int> v);
 
     void append(int i);
+    void append_node(ListNode* node);
+    ListNode* intersect(const LinkedList &other) const;
     void reverse();
     int kthFromLast(int k);
     bool delete_node(ListNode* node);
