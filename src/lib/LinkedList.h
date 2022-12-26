@@ -20,11 +20,17 @@ struct ListNode {
 
 
 class LinkedList {
+private:
+    void copy_list(ListNode* other_head);
 public:
     ListNode* head;
 
     LinkedList() : head(nullptr) {}
     LinkedList(ListNode* head) : head(head) {}
+    // Copy constructor
+    LinkedList(const LinkedList& other) {
+        copy_list(other.head);
+    }
 
     static LinkedList from_vector(vector<int> v);
 
@@ -38,6 +44,8 @@ public:
     bool empty();
 
     void print();
+
+    bool operator==(const LinkedList& other) const;
 };
 
 

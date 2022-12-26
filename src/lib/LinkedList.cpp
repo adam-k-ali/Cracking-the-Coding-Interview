@@ -4,6 +4,21 @@
 
 #include "LinkedList.h"
 
+void LinkedList::copy_list(ListNode* other_head) {
+    if (other_head == nullptr) {
+        head = nullptr;
+        return;
+    }
+    head = new ListNode(other_head->val);
+    ListNode* curr = head;
+    ListNode* other_curr = other_head->next;
+    while (other_curr != nullptr) {
+        curr->next = new ListNode(other_curr->val);
+        curr = curr->next;
+        other_curr = other_curr->next;
+    }
+}
+
 LinkedList LinkedList::from_vector(vector<int> v) {
     if (v.size() == 0) {
         return nullptr;
@@ -117,3 +132,15 @@ void LinkedList::print() {
     printf("]\n");
 }
 
+bool LinkedList::operator==(const LinkedList &other) const {
+    ListNode* curr = head;
+    ListNode* other_curr = other.head;
+    while (curr != nullptr && other_curr != nullptr) {
+        if (curr->val != other_curr->val) {
+            return false;
+        }
+        curr = curr->next;
+        other_curr = other_curr->next;
+    }
+    return curr == nullptr && other_curr == nullptr;
+}
