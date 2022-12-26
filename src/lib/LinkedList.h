@@ -29,6 +29,7 @@ public:
     static LinkedList from_vector(vector<int> v);
 
     void append(int i);
+    void reverse();
     int kthFromLast(int k);
     bool delete_node(ListNode* node);
     void concat(LinkedList other);

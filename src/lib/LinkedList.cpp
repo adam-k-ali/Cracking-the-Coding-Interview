@@ -31,6 +31,23 @@ void LinkedList::append(int i) {
     }
 }
 
+void LinkedList::reverse() {
+    if (head == nullptr) {
+        return;
+    }
+    ListNode* prev = nullptr;
+    ListNode* curr = head;
+    ListNode* next = head->next;
+    while (next != nullptr) {
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+        next = next->next;
+    }
+    curr->next = prev;
+    head = curr;
+}
+
 bool LinkedList::delete_node(ListNode* node) {
     if (node == nullptr || node->next == nullptr) {
         return false;
@@ -52,7 +69,6 @@ void LinkedList::concat(LinkedList other) {
         curr = curr->next;
     }
     curr->next = other.head;
-
 }
 
 int LinkedList::kthFromLast(int k) {
@@ -98,6 +114,6 @@ void LinkedList::print() {
         curr = curr->next;
         i++;
     }
-    printf("]");
+    printf("]\n");
 }
 
