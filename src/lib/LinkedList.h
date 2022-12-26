@@ -31,8 +31,10 @@ public:
     void append(int i);
     int kthFromLast(int k);
     bool delete_node(ListNode* node);
+    void concat(LinkedList other);
 
     size_t size();
+    bool empty();
 
     void print();
 };

@@ -42,6 +42,19 @@ bool LinkedList::delete_node(ListNode* node) {
     return true;
 }
 
+void LinkedList::concat(LinkedList other) {
+    if (empty()) {
+        head = other.head;
+    }
+
+    ListNode* curr = head;
+    while (curr->next != nullptr) {
+        curr = curr->next;
+    }
+    curr->next = other.head;
+
+}
+
 int LinkedList::kthFromLast(int k) {
     int n = size() - 1;
     int i = 0;
@@ -66,6 +79,10 @@ size_t LinkedList::size() {
         count++;
     }
     return count;
+}
+
+bool LinkedList::empty() {
+    return head == nullptr;
 }
 
 void LinkedList::print() {
