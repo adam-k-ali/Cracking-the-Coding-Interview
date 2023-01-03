@@ -45,5 +45,6 @@ target_link_libraries(AnimalShelter CTCILIB)
 
 # Chapter 4
 add_executable(RouteBetweenNodes chapt4/routebetweennodes.cpp)
+add_executable(MinimalTree chapt4/minimaltree.cpp)
 
 target_link_libraries(RouteBetweenNodes CTCILIB)
