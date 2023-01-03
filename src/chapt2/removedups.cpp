@@ -21,7 +21,7 @@ void deleteDuplicates(linkedlist list) {
 
         while (search != nullptr) {
             if (search->val == curr->val) {
-                // Delete node
+                // Delete graph_node
                 last->next = search->next;
             } else {
                 last = search;
