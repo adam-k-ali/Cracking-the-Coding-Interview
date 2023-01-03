@@ -1,2 +1,2 @@
-add_library(CTCILIB linkedlist.cpp stack.cpp)
+add_library(CTCILIB linkedlist.cpp stack.cpp setofstacks.cpp)
 

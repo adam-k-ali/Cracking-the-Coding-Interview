@@ -35,5 +35,7 @@ target_link_libraries(Intersection CTCILIB)
 target_link_libraries(LoopDetection CTCILIB)
 
 add_executable(StackMin chapt3/stackmin.cpp)
+add_executable(StackOfPlates chapt3/stackofplates.cpp)
 
 target_link_libraries(StackMin CTCILIB)
+target_link_libraries(StackOfPlates CTCILIB)
