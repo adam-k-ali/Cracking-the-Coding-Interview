@@ -23,11 +23,35 @@ private:
     size_t stack_size;
 
 public:
+    // Constructor
     stack() : top(nullptr), stack_size(0) {}
-    stack(StackNode* top) : top(top), stack_size(0) {}
+    // Copy constructor
+    stack(const stack& other) {
+        StackNode* other_top = other.top;
+        StackNode* new_top = nullptr;
+        StackNode* new_node = nullptr;
+        while (other_top != nullptr) {
+            new_node = new StackNode(other_top->val, other_top->local_min);
+            new_node->next = new_top;
+            new_top = new_node;
+            other_top = other_top->next;
+        }
+        top = new_top;
+        stack_size = other.stack_size;
+    }
+    // Constructor from vector
     stack(std::vector<int> v) : top(nullptr), stack_size(0) {
         for (int i = 0; i < v.size(); i++) {
             push(v[i]);
+        }
+    }
+
+    // Destructor
+    ~stack() {
+        while (top != nullptr) {
+            StackNode* newTop = top->next;
+            delete top;
+            top = newTop;
         }
     }
 

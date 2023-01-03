@@ -25,11 +25,20 @@ private:
 public:
     ListNode* head;
 
+    // Constructor
     linkedlist() : head(nullptr) {}
     linkedlist(ListNode* head) : head(head) {}
     // Copy constructor
     linkedlist(const linkedlist& other) {
         copy_list(other.head);
+    }
+    // Destructor
+    ~linkedlist() {
+        while (head != nullptr) {
+            ListNode* newHead = head->next;
+            delete head;
+            head = newHead;
+        }
     }
 
     static linkedlist from_vector(vector<int> v);

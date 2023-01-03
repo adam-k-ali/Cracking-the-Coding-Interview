@@ -14,7 +14,14 @@ private:
     std::vector<stack> stacks;
     size_t max_size;
 public:
+    // Constructor
     setofstacks(size_t max_size) : max_size(max_size) {}
+    // Destructor
+    ~setofstacks() {
+        for (auto& s : stacks) {
+            s.~stack();
+        }
+    }
 
     void push(int i);
     int pop();
