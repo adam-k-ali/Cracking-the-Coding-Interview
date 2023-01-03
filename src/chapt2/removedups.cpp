@@ -3,12 +3,12 @@
 //
 #include <iostream>
 #include <vector>
-#include "../lib/LinkedList.h"
+#include "../lib/linkedlist.h"
 
 
 using namespace std;
 
-void deleteDuplicates(LinkedList list) {
+void deleteDuplicates(linkedlist list) {
     if (list.size() <= 1) {
         // List is empty or only contains 1 element.
         return;
@@ -36,7 +36,7 @@ void deleteDuplicates(LinkedList list) {
 
 int main() {
     vector<int> vect{1, 2, 2, 3, 2, 4, 3};
-    LinkedList list = LinkedList::from_vector(vect);
+    linkedlist list = linkedlist::from_vector(vect);
     deleteDuplicates(list);
     list.print();
 }

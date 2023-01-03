@@ -1,8 +1,8 @@
 #include <unordered_set>
 #include <iostream>
-#include "../lib/LinkedList.h"
+#include "../lib/linkedlist.h"
 
-ListNode* detectLoop(LinkedList list) {
+ListNode* detectLoop(linkedlist list) {
     unordered_set<int> history;
     ListNode* curr = list.head;
     while(curr != nullptr) {
@@ -16,7 +16,7 @@ ListNode* detectLoop(LinkedList list) {
 }
 
 int main() {
-    LinkedList list = LinkedList::from_vector({1,2,3,4,5,3});
+    linkedlist list = linkedlist::from_vector({1, 2, 3, 4, 5, 3});
     std::cout << detectLoop(list)->val;
     return 0;
 }

@@ -13,7 +13,7 @@ add_executable(StringRotation chapt1/stringrotation.cpp)
 #Add lib files
 add_subdirectory(lib)
 
-# Add executable with the LinkedList library from 'lib' folder
+# Add executable with the linkedlist library from 'lib' folder
 
 
 add_executable(RemoveDuplicates chapt2/removedups.cpp)
@@ -25,11 +25,15 @@ add_executable(Palindrome chapt2/palindrome.cpp)
 add_executable(Intersection chapt2/intersection.cpp)
 add_executable(LoopDetection chapt2/loopdetection.cpp)
 
-target_link_libraries(RemoveDuplicates LinkedListLib)
-target_link_libraries(KthFromLast LinkedListLib)
-target_link_libraries(DeleteMiddleNode LinkedListLib)
-target_link_libraries(Partition LinkedListLib)
-target_link_libraries(SumLists LinkedListLib)
-target_link_libraries(Palindrome LinkedListLib)
-target_link_libraries(Intersection LinkedListLib)
-target_link_libraries(LoopDetection LinkedListLib)
+target_link_libraries(RemoveDuplicates CTCILIB)
+target_link_libraries(KthFromLast CTCILIB)
+target_link_libraries(DeleteMiddleNode CTCILIB)
+target_link_libraries(Partition CTCILIB)
+target_link_libraries(SumLists CTCILIB)
+target_link_libraries(Palindrome CTCILIB)
+target_link_libraries(Intersection CTCILIB)
+target_link_libraries(LoopDetection CTCILIB)
+
+add_executable(StackMin chapt3/stackmin.cpp)
+
+target_link_libraries(StackMin CTCILIB)

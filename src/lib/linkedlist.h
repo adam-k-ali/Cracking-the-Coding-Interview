@@ -19,35 +19,35 @@ struct ListNode {
 };
 
 
-class LinkedList {
+class linkedlist {
 private:
     void copy_list(ListNode* other_head);
 public:
     ListNode* head;
 
-    LinkedList() : head(nullptr) {}
-    LinkedList(ListNode* head) : head(head) {}
+    linkedlist() : head(nullptr) {}
+    linkedlist(ListNode* head) : head(head) {}
     // Copy constructor
-    LinkedList(const LinkedList& other) {
+    linkedlist(const linkedlist& other) {
         copy_list(other.head);
     }
 
-    static LinkedList from_vector(vector<int> v);
+    static linkedlist from_vector(vector<int> v);
 
     void append(int i);
     void append_node(ListNode* node);
-    ListNode* intersect(const LinkedList &other) const;
+    ListNode* intersect(const linkedlist &other) const;
     void reverse();
     int kthFromLast(int k);
     bool delete_node(ListNode* node);
-    void concat(LinkedList other);
+    void concat(linkedlist other);
 
     size_t size();
     bool empty();
 
     void print();
 
-    bool operator==(const LinkedList& other) const;
+    bool operator==(const linkedlist& other) const;
 };
 
 

@@ -1,8 +1,8 @@
-#include "../lib/LinkedList.h"
+#include "../lib/linkedlist.h"
 
-LinkedList partition(LinkedList list, int x) {
-    LinkedList left;
-    LinkedList right;
+linkedlist partition(linkedlist list, int x) {
+    linkedlist left;
+    linkedlist right;
 
     ListNode* curr = list.head;
     while (curr != nullptr) {
@@ -20,7 +20,7 @@ LinkedList partition(LinkedList list, int x) {
 }
 
 int main() {
-    LinkedList list = LinkedList::from_vector({3, 5, 8, 5, 10, 2, 1});
+    linkedlist list = linkedlist::from_vector({3, 5, 8, 5, 10, 2, 1});
     list = partition(list, 5);
     list.print();
 }

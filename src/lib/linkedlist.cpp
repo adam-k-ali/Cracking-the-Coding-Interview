@@ -2,10 +2,10 @@
 // Created by Adam Ali on 26/12/2022.
 //
 
-#include "LinkedList.h"
+#include "linkedlist.h"
 #include <iostream>
 
-void LinkedList::copy_list(ListNode* other_head) {
+void linkedlist::copy_list(ListNode* other_head) {
     if (other_head == nullptr) {
         head = nullptr;
         return;
@@ -20,7 +20,7 @@ void LinkedList::copy_list(ListNode* other_head) {
     }
 }
 
-LinkedList LinkedList::from_vector(vector<int> v) {
+linkedlist linkedlist::from_vector(vector<int> v) {
     if (v.size() == 0) {
         return nullptr;
     }
@@ -32,10 +32,10 @@ LinkedList LinkedList::from_vector(vector<int> v) {
         curr = curr->next;
     }
 
-    return LinkedList(head);
+    return linkedlist(head);
 }
 
-void LinkedList::append(int i) {
+void linkedlist::append(int i) {
     if (head == nullptr) {
         head = new ListNode(i);
     } else {
@@ -47,7 +47,7 @@ void LinkedList::append(int i) {
     }
 }
 
-void LinkedList::append_node(ListNode* node) {
+void linkedlist::append_node(ListNode* node) {
     if (head == nullptr) {
         head = node;
     } else {
@@ -59,7 +59,7 @@ void LinkedList::append_node(ListNode* node) {
     }
 }
 
-ListNode* LinkedList::intersect(const LinkedList &other) const {
+ListNode* linkedlist::intersect(const linkedlist &other) const {
     ListNode* curr = head;
     while (curr != nullptr) {
         ListNode* other_curr = other.head;
@@ -74,7 +74,7 @@ ListNode* LinkedList::intersect(const LinkedList &other) const {
     return nullptr;
 }
 
-void LinkedList::reverse() {
+void linkedlist::reverse() {
     if (head == nullptr) {
         return;
     }
@@ -91,7 +91,7 @@ void LinkedList::reverse() {
     head = curr;
 }
 
-bool LinkedList::delete_node(ListNode* node) {
+bool linkedlist::delete_node(ListNode* node) {
     if (node == nullptr || node->next == nullptr) {
         return false;
     }
@@ -102,7 +102,7 @@ bool LinkedList::delete_node(ListNode* node) {
     return true;
 }
 
-void LinkedList::concat(LinkedList other) {
+void linkedlist::concat(linkedlist other) {
     if (empty()) {
         head = other.head;
     }
@@ -114,7 +114,7 @@ void LinkedList::concat(LinkedList other) {
     curr->next = other.head;
 }
 
-int LinkedList::kthFromLast(int k) {
+int linkedlist::kthFromLast(int k) {
     int n = size() - 1;
     int i = 0;
 
@@ -126,7 +126,7 @@ int LinkedList::kthFromLast(int k) {
     return curr->val;
 }
 
-size_t LinkedList::size() {
+size_t linkedlist::size() {
     if (head == nullptr) {
         return 0;
     }
@@ -140,11 +140,11 @@ size_t LinkedList::size() {
     return count;
 }
 
-bool LinkedList::empty() {
+bool linkedlist::empty() {
     return head == nullptr;
 }
 
-void LinkedList::print() {
+void linkedlist::print() {
     printf("[");
     ListNode* curr = head;
     int i = 0;
@@ -160,7 +160,7 @@ void LinkedList::print() {
     printf("]\n");
 }
 
-bool LinkedList::operator==(const LinkedList &other) const {
+bool linkedlist::operator==(const linkedlist &other) const {
     ListNode* curr = head;
     ListNode* other_curr = other.head;
     while (curr != nullptr && other_curr != nullptr) {

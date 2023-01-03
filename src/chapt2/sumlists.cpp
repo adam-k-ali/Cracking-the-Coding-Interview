@@ -1,13 +1,13 @@
-#include "../lib/LinkedList.h"
+#include "../lib/linkedlist.h"
 
-LinkedList sum(LinkedList a, LinkedList b, bool reverse_order = true) {
+linkedlist sum(linkedlist a, linkedlist b, bool reverse_order = true) {
     if (!reverse_order) {
         a.reverse();
         b.reverse();
     }
     ListNode* l1 = a.head;
     ListNode* l2 = b.head;
-    LinkedList result;
+    linkedlist result;
     int carry = 0;
     while (l1 != nullptr || l2 != nullptr) {
         int a = 0;
@@ -36,13 +36,13 @@ LinkedList sum(LinkedList a, LinkedList b, bool reverse_order = true) {
 }
 
 int main() {
-    LinkedList a = LinkedList::from_vector({7, 1, 6});
-    LinkedList b = LinkedList::from_vector({5, 9, 2});
-    LinkedList result = sum(a, b);
+    linkedlist a = linkedlist::from_vector({7, 1, 6});
+    linkedlist b = linkedlist::from_vector({5, 9, 2});
+    linkedlist result = sum(a, b);
     result.print();
 
-    a = LinkedList::from_vector({6, 1, 7});
-    b = LinkedList::from_vector({2, 9, 5});
+    a = linkedlist::from_vector({6, 1, 7});
+    b = linkedlist::from_vector({2, 9, 5});
     result = sum(a, b, false);
     result.print();
     return 0;

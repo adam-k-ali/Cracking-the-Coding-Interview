@@ -3,12 +3,12 @@
 //
 #include <iostream>
 #include <vector>
-#include "../lib/LinkedList.h"
+#include "../lib/linkedlist.h"
 
 using namespace std;
 
 int main() {
-    LinkedList list = LinkedList::from_vector({1,2,3,4,5});
+    linkedlist list = linkedlist::from_vector({1, 2, 3, 4, 5});
     for (int i = 0; i < 5; i++) {
         cout << list.kthFromLast(i) << endl;
     }
